@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Aesthetic Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav container">
+      <div class="brand">  
+        <a href="#home" class="logo">Mr.Unorthodox</a>
+      </div>
+
+      <ul class="nav-list" id="navList">
+        <li><button data-target="home" class="nav-btn active">Home</button></li>
+        <li><button data-target="about" class="nav-btn">About</button></li>
+        <li><button data-target="thoughts" class="nav-btn">Thoughts</button></li>
+        <li><button data-target="skills" class="nav-btn">Skills</button></li>
+        <li><button data-target="connect" class="nav-btn">Connect</button></li>
+      </ul>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="main container">
+    <!-- HOME -->
+    <section id="home" class="panel active">
+      <div class="home-hero">
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+
+        <h1>I am <span class="accent">Mehedi</span></h1>
+        <p class="tagline">I’m a student and a creative web developer, driven by a passion for elegant user interfaces and strengthened by solid coding skills.</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="panel">
+      <div class="panel-inner">
+        <h2>About</h2>
+
+        <div class="about-grid">
+          <div class="about-item">
+            <h4>Age</h4>
+            <p>I am sixteen years of age, standing at the threshold betwixt youth and awakening.</p>
+          </div>
+
+          <div class="about-item">
+            <h4>Education</h4>
+            <p>Presently a student enrolled at Pakistan School, Kuwait, pursuing the path of learning and growth within its halls.</p>
+          </div>
+
+          <div class="about-item">
+            <h4>Experience</h4>
+            <p>I am but a student of the ninth grade, yet wholly enamored with the art of coding. Though my craft is still unpolished, my fingers dance swiftly across the keys, chasing visions of digital wonders yet to be born. I believe that a touch of indolence is woven into the very fabric of coding, for in its stillness often lies the spark of invention. To me, coding is not mere command and syntax—it is language that flows straight into the chambers of my heart. Perhaps brighter days lie ahead; of this I am certain. All else remains but the private shadows of my being.</p>
+          </div>
+
+          <div class="about-item">
+            <h4>Interests</h4>
+            <p>Passionate about coding with a focus on frontend development, while equally engaged in the spirit of sports through football and cricket, and finding relaxation and inspiration in the world of movies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THOUGHTS -->
+    <section id="thoughts" class="panel">
+      <div class="panel-inner">
+        <h2>Thoughts</h2>
+        <p class="thought-slot" contenteditable="true">Dreams are but sparks, waiting for hands to shape them.
+Every keystroke is a whisper to the future.
+Laziness may sit beside me, yet invention stirs within.
+Errors are not endings, but secret teachers in disguise.
+The screen is a canvas, the code my restless brush.
+In silence, creation hums louder than any voice.
+I do not chase greatness; I build it, line by line.
+And perhaps, tomorrow will remember the magic I began today....</p>
+
+        <div class="thought-actions">
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="panel">
+      <div class="panel-inner">
+        <h2>Skills</h2>
+
+        <div class="skill-columns">
+          <div class="skill-col">
+            <h4>It's All About Skills</h4>
+            <ol>
+              <li>Football → I carve rhythm on the field where leather meets destiny.</li>
+              <li>Cricket → I script patience and precision upon the green stage of willow and leather.</li>
+              <li>Frontend Coding → I weave visions into existence, binding logic with the artistry of design.</li>
+            </ol>
+          </div>
+
+          <div class="skill-col">
+            <h4>My Focus Points</h4>
+            <ul>
+              <li>I wage wars with numbers, bending equations to my will.</li>
+              <li>I guard curiosity like a flame, unyielding to the winds of doubt.</li>
+              <li>I master memory, turning pages into living echoes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONNECT -->
+<section id="connect" class="panel">
+  <div class="panel-inner">
+    <h2>Connect</h2>
+
+    <div class="connect-buttons">
+      <a href="https://www.facebook.com/mr.iceman56/" target="_blank" rel="noopener noreferrer" class="connect-btn fb">
+        <i class="fab fa-facebook-f"></i> Facebook
+      </a>
+
+      <a href="https://www.instagram.com/mr.iceman56/" target="_blank" rel="noopener noreferrer" class="connect-btn insta">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+
+      <a href="https://github.com/mr-alrs" target="_blank" rel="noopener noreferrer" class="connect-btn git">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+
+      <a href="https://www.linkedin.com/in/mrunorthodox56/" target="_blank" rel="noopener noreferrer" class="connect-btn li">
+        <i class="fab fa-linkedin-in"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mr.Hasan — All Rights Reserved✨</p>
+    </div>
+  </footer>
+
+  <!-- Theme chooser (bottom-left) -->
+<div class="theme-chooser" id="themeChooser" aria-hidden="false">
+  <label>Choose theme</label>
+  <div class="theme-options">
+    <button id="btnLight" class="theme-btn" title="Light theme">Light</button>
+    <button id="btnDark" class="theme-btn" title="Dark theme">Dark</button>
+  </div>
+</div>
+
+
+  <script src="script.js" defer></script>
+</body>
+</html>
