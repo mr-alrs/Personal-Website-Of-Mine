@@ -1,0 +1,279 @@
+/* -------------------------
+  Full style.css — Copy / Paste
+  Dark + Light theme, header fonts, particles ready
+   ------------------------- */
+
+/* Import fonts (works from CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap');
+
+:root{
+  /* neutral */
+  --radius: 14px;
+  --container-max: 1100px;
+
+  /* light-theme palette (used under .theme-light) */
+  --light-bg: #fbfcfd;
+  --light-olive: #6f8a2f; /* main olive */
+  --light-olive-2: #9fbf63;
+  --light-ink: #0b0b0b;
+  --light-panel: rgba(255,255,255,0.95);
+
+  /* dark-theme palette (used under .theme-dark) */
+  --dark-bg: #050407;
+  --dark-maroon: #5b1018;
+  --dark-maroon-2: #7e2a36;
+  --dark-ink: #f2f4f8;
+  --dark-panel: rgba(6,8,12,0.72);
+}
+
+/* reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--dark-ink);
+  background: var(--dark-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* canvas: behind everything */
+#bgCanvas{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+}
+
+/* container */
+.container{
+  width: 94%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+/* Header */
+.site-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(6,8,12,0.45), rgba(6,8,12,0.25));
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.nav {
+  width: 94%;
+  max-width: var(--container-max);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 0;
+}
+.brand .logo {
+  font-family: 'Orbitron', 'Poppins', sans-serif; /* distinctive header font */
+  font-weight: 700;
+  color: #f6f7fb;
+  font-size: 1.12rem;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+}
+.nav-list {
+  display:flex;
+  gap:14px;
+  list-style: none;
+  align-items:center;
+}
+.nav-btn{
+  background: transparent;
+  border: 0;
+  color: inherit;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .18s ease, background .18s ease, color .18s ease;
+}
+.nav-btn.active{
+  background: linear-gradient(90deg, rgba(112,130,56,0.95), rgba(106,79,178,0.95));
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+/* main and panels */
+.main{ padding-top:84px; min-height:100vh; position: relative; z-index: 3; }
+.panel { display: none; padding: 36px 0; }
+.panel.active { display: block; }
+
+/* panel inner - glass card */
+.panel-inner{
+  border-radius: var(--radius);
+  padding: 28px;
+  margin: 10px 0;
+  box-shadow: 0 10px 30px rgba(1,3,6,0.6);
+  background: var(--dark-panel);
+  backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 2;
+}
+
+/* HOME hero */
+.home-hero{ text-align:center; padding: 48px 18px; }
+.home-hero h1{
+  font-family: 'Orbitron', 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+  color: var(--dark-ink);
+  letter-spacing: 0.6px;
+}
+.home-hero .accent{
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(91,16,24,0.12), rgba(126,42,54,0.08));
+  color: var(--dark-ink);
+  font-weight: 800;
+}
+
+/* social */
+.social-icons{ display:flex; gap:12px; justify-content:center; margin-bottom: 12px; }
+.social-icons a{
+  width:36px;height:36px;border-radius:50%;display:inline-grid;place-items:center;
+  text-decoration:none;color:inherit;border:1px solid rgba(255,255,255,0.06);
+}
+
+/* about grid */
+.about-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:12px; margin-top:10px; }
+.about-item{ padding:12px; border-radius:10px; background: rgba(255,255,255,0.02); }
+
+/* thoughts slot */
+.thought-slot{
+  min-height:140px;
+  border-radius:12px;
+  padding:12px;
+  background: rgba(255,255,255,0.02);
+  outline: none;
+  color: inherit;
+}
+
+/* skills */
+.skill-columns{ display:flex; gap:20px; flex-wrap:wrap; margin-top:12px; }
+.skill-col{ flex:1; min-width:220px; padding:12px; border-radius:10px; background: rgba(255,255,255,0.02); }
+
+/* connect buttons */
+.connect-buttons{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:12px; }
+.connect-btn{
+  display:inline-flex; gap:8px; align-items:center;
+  padding:10px 18px;border-radius:40px;
+  color:#fff;text-decoration:none;font-weight:700;
+  transition: transform .18s, box-shadow .18s;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.45);
+}
+.connect-btn.fb{ background:#1877f2; }
+.connect-btn.insta{ background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
+.connect-btn.git{ background:#111; }
+.connect-btn.li{ background:#0077b5; }
+
+/* footer */
+.site-footer{ text-align:center; padding:20px 0; color: rgba(255,255,255,0.65); }
+
+/* theme chooser / buttons (if still present) */
+.theme-chooser{
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 11;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  color: #fff;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.6);
+}
+.theme-btn{ padding:6px 10px; border-radius:8px; border:0; cursor:pointer; background: rgba(255,255,255,0.04); color: inherit; font-weight:700; }
+
+/* responsive */
+@media (max-width: 920px){
+  .about-grid{ grid-template-columns: 1fr; }
+  .nav-list{ display:none; position:absolute; right:12px; top:64px; background: rgba(6,8,12,0.9); padding:12px; border-radius:10px; }
+  .site-header{ padding:8px 0; }
+  .home-hero h1{ font-size:2rem; }
+  section{ padding:100px 5%; }
+}
+
+/* ---------------------------
+   THEME: LIGHT (olive + black/white)
+   apply under body.theme-light
+   --------------------------- */
+body.theme-light{
+  background: linear-gradient(135deg, var(--light-bg) 0%, #f7faf6 50%, #eef7ef 100%);
+  color: var(--light-ink);
+}
+body.theme-light .panel-inner{
+  background: var(--light-panel);
+  box-shadow: 0 10px 30px rgba(12,15,12,0.06);
+  color: var(--light-ink);
+}
+body.theme-light .site-header{
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+  border-bottom: 1px solid rgba(10,10,10,0.04);
+}
+body.theme-light .brand .logo{ color: var(--light-olive); }
+body.theme-light .nav-btn{ color: var(--light-ink); }
+body.theme-light .nav-btn.active{
+  background: linear-gradient(90deg, var(--light-olive), var(--light-olive-2));
+  color: #fff;
+}
+
+/* lighter panel accents */
+body.theme-light .home-hero h1{ color: var(--light-ink); }
+body.theme-light .home-hero .accent{ background: linear-gradient(90deg, rgba(111,138,47,0.14), rgba(159,191,99,0.08)); color: var(--light-ink); }
+
+/* connect buttons on light theme — keep vivid but slightly darker text */
+body.theme-light .connect-btn{ color:#fff; box-shadow: 0 8px 20px rgba(112,130,56,0.12); }
+
+/* ---------------------------
+   THEME: DARK (maroon + deep black)
+   apply under body.theme-dark
+   --------------------------- */
+body.theme-dark{
+  background: linear-gradient(180deg, #050407 0%, #07060a 50%, #0a0a0a 100%);
+  color: var(--dark-ink);
+}
+body.theme-dark .panel-inner{
+  background: var(--dark-panel);
+  color: var(--dark-ink);
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 12px 40px rgba(2,6,10,0.6);
+}
+body.theme-dark .site-header{
+  background: linear-gradient(180deg, rgba(6,8,12,0.6), rgba(6,8,12,0.2));
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+body.theme-dark .brand .logo{ color: var(--dark-maroon); text-shadow: 0 2px 8px rgba(124,38,44,0.18); }
+body.theme-dark .nav-btn{ color: var(--dark-ink); }
+body.theme-dark .nav-btn.active{
+  background: linear-gradient(90deg, var(--dark-maroon), var(--dark-maroon-2));
+  color: #fff;
+}
+
+/* home hero accent for dark */
+body.theme-dark .home-hero .accent{
+  background: linear-gradient(90deg, rgba(91,16,24,0.12), rgba(126,42,54,0.08));
+  color: var(--dark-ink);
+}
+
+/* small helpers */
+.accent { font-weight: 800; }
+
+
+
+
+/* end of CSS */
